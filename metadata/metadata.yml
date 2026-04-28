@@ -1,5 +1,5 @@
 metadata_version: 1
-name: aind-fip-dff
+name: test-aind-fip-dff
 description: This capsule takes an input raw NWB file of fiber data and creates processed
   traces that are baseline- (dF/F) and motion-corrected
 authors:
