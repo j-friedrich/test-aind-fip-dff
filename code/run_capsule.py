@@ -1153,6 +1153,7 @@ def generate_qc_plots(
 
 def main():
     start_time = dt.now()
+    print(">>> Executing main() from GitHub <<<")
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--source_pattern",
