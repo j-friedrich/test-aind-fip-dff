@@ -136,7 +136,7 @@ def write_output_metadata(
         p.pipeline_url = u
     if v := os.getenv("PIPELINE_VERSION", ""):
         p.pipeline_version = v
-    processing.write_standard_file(output_directory=Path(output_fp).parent)
+    processing.write_standard_file(output_directory=Path(output_fp))
 
     dd_file = Path(json_dir) / "data_description.json"
     if dd_file.exists():
@@ -152,7 +152,7 @@ def write_output_metadata(
         derived_dd = DerivedDataDescription.from_data_description(
             data_description=new_dd, process_name="processed"
         )
-        derived_dd.write_standard_file(output_directory=Path(output_fp).parent)
+        derived_dd.write_standard_file(output_directory=Path(output_fp))
     else:
         logging.error("no input data description")
 
@@ -1277,7 +1277,7 @@ def main():
             json_dir=fiber_path,
             process_name=process_name,
             input_fp=source_path,
-            output_fp=nwb_path,
+            output_fp=output_dir,
             start_date_time=start_time,
         )
 
